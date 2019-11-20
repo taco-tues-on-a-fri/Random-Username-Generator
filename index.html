@@ -11,14 +11,58 @@
 
   <link rel="shortcut icon" href="favicon.png">
   <link rel="stylesheet" href="style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
 </head>
 
 <body onload="random_name_generator()">
-  <h1 id="random_name_textarea"></h1>
-  <button id="next" type="button" onclick="random_name_generator()"> Next pair </button>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Michael Jadick</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://taco-tues-on-a-fri.github.io/random-username-generator/">Random Name Generator <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row pt-5"></div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col">
+        <button id="next" type="button" onclick="random_name_generator()"> Next pair </button>
+      </div>
+      <div class="col"></div>
+    </div>
+    <div class="row pt-2">
+      <div class="col"></div>
+        <div class="col">
+          <div class="list-group">
+            <a href="#" id="random_name_textarea" class="list-group-item list-group-item-action active"></a>
+            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus</a>
+          </div>
+      </div>
+    <div class="col"></div>
+  </div>
+  
   <div id="pairs_log" style="text-align: left">
     <ul id="historical_pair"></ul>
+  </div>
   </div>
   <script src="data.js"></script>
   <script src="main.js"></script>
