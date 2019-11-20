@@ -12,7 +12,6 @@
   <link rel="shortcut icon" href="favicon.png">
   <link rel="stylesheet" href="style.css">
   <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
 </head>
 
 <body onload="random_name_generator()">
@@ -44,17 +43,17 @@
     <div class="row">
       <div class="col"></div>
       <div class="col">
-        <button id="next" type="button" onclick="random_name_generator()"> Next pair </button>
+        <!-- <button id="next" type="button" onclick="random_name_generator()"> Next pair </button> -->
+        <button id="next" type="button" onclick="add_to_list_then_generate_new_pair()"> Next pair </button>
       </div>
       <div class="col"></div>
     </div>
     <div class="row pt-2">
       <div class="col"></div>
         <div class="col">
-          <div class="list-group">
-            <a href="#" id="random_name_textarea" class="list-group-item list-group-item-action active"></a>
-            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-            <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus</a>
+          <div id="word_list_group"class="list-group">
+            <a id="random_name_textarea" href="#" class="list-group-item list-group-item-action active"></a>
+            <a id="historical_pair" href="#" class="list-group-item list-group-item-action"></a>
           </div>
       </div>
     <div class="col"></div>
