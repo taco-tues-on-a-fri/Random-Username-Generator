@@ -11,15 +11,15 @@ const random_name_generator = () => {
   random_pair.push(adjectives[random_index(adjectives)]);
   random_pair.push(nouns[random_index(nouns)]);
 
-  document.getElementById("output").innerHTML = random_pair.join(" ");
+  document.getElementById("random_name_textarea").innerHTML = random_pair.join(" ");
   historical_pairs.push(random_pair.join(" "));
 
-  list_items = historical_pairs.reduce((result, item) => {  //create historical list of generated words
-    result += `<li>${item}</li>`;
-    return result; 
+  create_list_items = historical_pairs.reduce((historical_pair, item) => {  //create historical list of generated words
+    historical_pair += `<li>${item}</li>`;
+    return historical_pair; 
   }, '');
 
-  result_element = document.getElementById('result'); // get element from DOM to display the list, ul / ol element
+  historical_pairs_element = document.getElementById('historical_pair'); // get element from DOM to display the list, ul / ol element
   
-  result_element.innerHTML = list_items;
+  historical_pairs_element.innerHTML = create_list_items;
 }
