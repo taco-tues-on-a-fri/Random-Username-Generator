@@ -3,52 +3,6 @@ const nouns      =  words.nouns;
 
 const random_index = (array) =>  { return Math.floor(Math.random() * array.length) };
 
-var buttons = document.querySelectorAll('.js-button');
-
-var displayContent = function (button, content) {
-  if (content.classList.contains('active')) {
-      // Hide content
-      content.classList.remove('active');
-      button.setAttribute('aria-expanded', 'false');
-      content.setAttribute('aria-hidden', 'true');
-    } else {
-      // Show content
-      content.classList.add('active');
-      button.setAttribute('aria-expanded', 'true');
-      content.setAttribute('aria-hidden', 'false');
-    }
-};
-
-[].forEach.call(buttons, function(button, index) {
-  // Content var
-  var content = button.nextElementSibling;
-  
-  // Set button attributes
-  button.setAttribute('id', 'button-' + index);
-  button.setAttribute('aria-expanded', 'false');
-  button.setAttribute('aria-controls', 'content-' + index);
-  
-  // Set content attributes
-  content.setAttribute('id', 'content-' + index);
-  content.setAttribute('aria-hidden', 'true');    
-  content.setAttribute('aria-labelledby', 'button-' + index);
-
-  button.addEventListener('click', function () {
-    displayContent(this, content);
-    return false;
-  }, false);
-  
-  button.addEventListener('keydown', function (event) {
-    // Handle 'space' key
-    if (event.which === 32) {
-      event.preventDefault();
-      displayContent(this, content);
-    }
-  }, false);
-  
-});  
-
-
 function copy_text_to_clipboard(last_pair) {
   /* Get the text field */
   var copy_text = last_pair
@@ -63,6 +17,24 @@ function copy_text_to_clipboard(last_pair) {
   /* Alert the copied text */
   alert("Copied the text: " + copy_text.value);
 }
+
+
+const create_button_list_item_w_last_pair = () => {
+  const last_pair = document.getElementById("random_name_textarea").innerHTML;
+  const button = document.createElement("BUTTON");
+  button.id = last_pair.replace(" ", "-");
+  var button_id = document.createTextNode(button.id);
+
+  // console.log(button_id)
+  
+  button.className = 'list-group-item list-group-item-action';
+  button.setAttribute= "button"
+  // button.onclick(copy_text_to_clipboard(last_pair))
+  
+  const text = document.createTextNode(last_pair);
+  button.appendChild(text);
+  document.getElementById("word_list_group").appendChild(button);
+};
 
 const create_anchor_list_item_w_last_pair = () => {
   const last_pair = document.getElementById("random_name_textarea").innerHTML;
