@@ -16,16 +16,11 @@ const create_button_list_item_w_last_pair = () => {
   const last_pair = document.getElementById("random_name_textarea").innerHTML;
   const button = document.createElement("BUTTON");
   button.id = last_pair.replace(" ", "-");
-  const data_target = "#"+button.id
-  button.setAttribute("value", last_pair)
-  button.setAttribute("data-clipboard-action", "copy")
-  button.setAttribute("data-clipboard-target", data_target)
+  const data_target = "#"+button.id;
+  button.setAttribute("value", last_pair);
+  button.setAttribute("data-clipboard-action", "copy");
+  button.setAttribute("data-clipboard-target", data_target);
   button.className = 'list-group-item list-group-item-action';
-
-  // console.log(button_id)
-  
-  // button.onclick(copy_text_to_clipboard(last_pair))
-  
   const text = document.createTextNode(last_pair);
   button.appendChild(text);
   document.getElementById("word_list_group").appendChild(button);
@@ -36,13 +31,8 @@ const create_anchor_list_item_w_last_pair = () => {
   const anchor = document.createElement("A");
   anchor.id = last_pair.replace(" ", "-");
   var anchor_id = document.createTextNode(anchor.id);
-
-  // console.log(anchor_id)
-  
   anchor.className = 'list-group-item list-group-item-action';
   anchor.role= "button"
-  // anchor.onclick(copy_text_to_clipboard(last_pair))
-  
   const text = document.createTextNode(last_pair);
   anchor.appendChild(text);
   document.getElementById("word_list_group").appendChild(anchor);
@@ -56,8 +46,8 @@ const random_name_generator = () => {
 };
 
 const add_to_list_then_generate_new_pair = () => {
-  create_anchor_list_item_w_last_pair()
-  random_name_generator()
+  create_button_list_item_w_last_pair();
+  random_name_generator();
 };
 
 
