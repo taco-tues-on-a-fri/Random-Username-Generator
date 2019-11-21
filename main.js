@@ -3,12 +3,13 @@ const nouns      =  words.nouns;
 
 const random_index = (array) =>  { return Math.floor(Math.random() * array.length) };
 
-function copy_text_to_clipboard(anchor_id) {
+function copy_text_to_clipboard(last_pair) {
   /* Get the text field */
-  const copy_text = document.getElementById(anchor_id);
+  console.log('inside clipboard: ' + JSON.stringify(last_pair))
+  var copy_text = last_pair
 
   /* Select the text field */
-  copy_text.select(null===anchor_id ? ' ' : anchor_id);
+  copy_text.select();
   copy_text.setSelectionRange(0, 99999); /*For mobile devices*/
 
   /* Copy the text inside the text field */
@@ -22,10 +23,10 @@ const create_anchor_list_item_w_last_pair = () => {
   const last_pair = document.getElementById("random_name_textarea").innerHTML;
   const anchor = document.createElement("A");
   anchor.id = last_pair.replace(" ", "-");
-  const anchor_id = document.createTextNode(anchor.id);
+  var anchor_id = document.createTextNode(anchor.id);
   console.log(anchor_id)
   anchor.className = 'list-group-item list-group-item-action';
-  anchor.onclick(copy_text_to_clipboard(anchor_id))
+  anchor.onclick(copy_text_to_clipboard(last_pair))
   const text = document.createTextNode(last_pair);
   anchor.appendChild(text);
   document.getElementById("word_list_group").appendChild(anchor);
