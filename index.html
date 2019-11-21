@@ -11,17 +11,53 @@
 
   <link rel="shortcut icon" href="favicon.png">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
+  <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.3.1/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-8nq3OiMMgrVFAHyRMMO+DTfMEciSY+c3Awhj/5ljQ1xck1Uv2BUtMjsjLD8GT5Er" crossorigin="anonymous">
 </head>
 
 <body onload="random_name_generator()">
-  <h1 id="random_name_textarea"></h1>
-  <button id="next" type="button" onclick="random_name_generator()"> Next pair </button>
-  <div id="pairs_log" style="text-align: left">
-    <ul id="historical_pair"></ul>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Michael Jadick</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://taco-tues-on-a-fri.github.io/random-username-generator/">Random Name Generator <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row pt-5"></div>
+    <div class="row">
+      <div class="col"></div>
+      <div class="col"></div>
+      <div class="col"></div>
+    </div>
+    <div class="row pt-2">
+      <div class="col"></div>
+        <div class="col">
+          <div id="word_list_group"class="list-group">
+            <button id="random_name_textarea" onclick="add_to_list_then_generate_new_pair()" class="list-group-item list-group-item-action active"></button>
+          </div>
+      </div>
+    <div class="col"></div>
   </div>
+  </div>
+  <script src="scripts/clipboard.min.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
+
 </body>
 
 </html>
