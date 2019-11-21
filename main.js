@@ -2,13 +2,9 @@ const adjectives =  words.adjectives;
 const nouns      =  words.nouns;
 
 const clip = new ClipboardJS('.list-group-item');
-// clip.on("success", function() {
-//   document.getElementById("word_list_group").insertAdjacentHTML('beforebegin', '<div>Copied to clipboard</div>');
-// });
+
 clip.on("success", function() {
-  // document.getElementById("alert_container").append(div)("word_list_group")
-  elem.innerHTML= elem.innerHTML +message
-  setTimeout(() => div.remove(), 100);
+    alert("Copied to clipboard");
 });
 // clip.on("error", function() {
 //   document.body.insertAdjacentHTML('beforebegin', '<div>that didn\'t work.</div>');
