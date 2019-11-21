@@ -1,34 +1,29 @@
 const adjectives =  words.adjectives;
 const nouns      =  words.nouns;
 
+const clip = new ClipboardJS('.list-group-item');
+clip.on("success", function() {
+  document.body.insertAdjacentHTML('beforeend', '<div>that worked.</div>');
+});
+clip.on("error", function() {
+  document.body.insertAdjacentHTML('beforeend', '<div>that didn\'t work.</div>');
+});
+
+
 const random_index = (array) =>  { return Math.floor(Math.random() * array.length) };
-
-function copy_text_to_clipboard(last_pair) {
-  /* Get the text field */
-  var copy_text = last_pair
-
-  /* Select the text field */
-  copy_text.select();
-  copy_text.setSelectionRange(0, 99999); /*For mobile devices*/
-
-  /* Copy the text inside the text field */
-  document.execCommand("copy");
-
-  /* Alert the copied text */
-  alert("Copied the text: " + copy_text.value);
-}
-
 
 const create_button_list_item_w_last_pair = () => {
   const last_pair = document.getElementById("random_name_textarea").innerHTML;
   const button = document.createElement("BUTTON");
   button.id = last_pair.replace(" ", "-");
-  var button_id = document.createTextNode(button.id);
+  const data_target = "#"+button.id
+  button.setAttribute("value", last_pair)
+  button.setAttribute("data-clipboard-action", "copy")
+  button.setAttribute("data-clipboard-target", data_target)
+  button.className = 'list-group-item list-group-item-action';
 
   // console.log(button_id)
   
-  button.className = 'list-group-item list-group-item-action';
-  button.setAttribute= "button"
   // button.onclick(copy_text_to_clipboard(last_pair))
   
   const text = document.createTextNode(last_pair);
@@ -65,3 +60,18 @@ const add_to_list_then_generate_new_pair = () => {
   random_name_generator()
 };
 
+
+// function copy_text_to_clipboard(last_pair) {
+//   /* Get the text field */
+//   var copy_text = last_pair
+
+//   /* Select the text field */
+//   copy_text.select();
+//   copy_text.setSelectionRange(0, 99999); /*For mobile devices*/
+
+//   /* Copy the text inside the text field */
+//   document.execCommand("copy");
+
+//   /* Alert the copied text */
+//   alert("Copied the text: " + copy_text.value);
+// }
