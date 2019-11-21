@@ -2,14 +2,21 @@ const adjectives =  words.adjectives;
 const nouns      =  words.nouns;
 
 const clip = new ClipboardJS('.list-group-item');
+// clip.on("success", function() {
+//   document.getElementById("word_list_group").insertAdjacentHTML('beforebegin', '<div>Copied to clipboard</div>');
+// });
 clip.on("success", function() {
-  document.body.insertAdjacentHTML('beforeend', '<div>that worked.</div>');
+  // document.getElementById("alert_container").append(div)("word_list_group")
+  elem.innerHTML= elem.innerHTML +message
+  setTimeout(() => div.remove(), 100);
 });
-clip.on("error", function() {
-  document.body.insertAdjacentHTML('beforeend', '<div>that didn\'t work.</div>');
-});
-
-
+// clip.on("error", function() {
+//   document.body.insertAdjacentHTML('beforebegin', '<div>that didn\'t work.</div>');
+// });
+let elem= document.querySelector("alert_container")
+let div = document.createElement('div');
+div.innerHTML = "Copied to clipboard";
+let message = "Copied to clipboard";
 const random_index = (array) =>  { return Math.floor(Math.random() * array.length) };
 
 const create_button_list_item_w_last_pair = () => {
