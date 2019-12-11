@@ -22,7 +22,6 @@ The project is live with a basic interface. I have plans to implement a dynamic 
 - The page will generate and display the first word set.
 - Click on the generated words to get another random set.
 - Clicking on any of the historical words in the list below will automatically copy them to the clipboard.
-- Also great for writing prompts.
 
 ### Design decisions:
 I created the application to help make different random usernames when creating accounts online. I built the randomizer function while traveling and then gave it a basic interface one afternoon. I frequently use this application and found that a button to copy to clipboard would be really useful.
