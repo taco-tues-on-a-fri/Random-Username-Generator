@@ -3,7 +3,7 @@ Random Username Generator
 Feb 2019 - Present
 ------------------
 
-## Version 2.0 of a project which generates a random username using vanilla JavaScript and a bootstrap font-end.
+## Version 2.0 of a project which generates a random username using vanilla JavaScript and a bootstrap front-end.
 
 Link to [live application](https://taco-tues-on-a-fri.github.io/random-username-generator/)
 
