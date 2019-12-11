@@ -24,7 +24,7 @@ The project is live with a basic interface. I have plans to implement a dynamic 
 - Clicking on any of the historical words in the list below will automatically copy them to the clipboard.
 - Also great for writing prompts.
 
-### Design Decisions:
+### Design decisions:
 I created the application to help make different random usernames when creating accounts online. I built the randomizer function while traveling and then gave it a basic interface one afternoon. I frequently use this application and found that a button to copy to clipboard would be really useful.
 I am looking forward to giving this application a React interface for it. 
 
