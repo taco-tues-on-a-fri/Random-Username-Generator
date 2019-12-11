@@ -10,10 +10,6 @@ Link to [live application](https://taco-tues-on-a-fri.github.io/random-username-
 ### Overview:
 Creates random two+ string phrases by pulling from a dataset of compiled and cleaned words.
 
-![Homepage](src/random-username-generator-01.png)
-![List of words](src/random-username-generator-02.png)
-![Alert](src/random-username-generator-03.png)
-
 ### State of project:
 The project is live with a basic interface. I have plans to implement a dynamic version using React in the near future.
 
@@ -22,6 +18,12 @@ The project is live with a basic interface. I have plans to implement a dynamic 
 - The page will generate and display the first word set.
 - Click on the generated words to get another random set.
 - Clicking on any of the historical words in the list below will automatically copy them to the clipboard.
+
+
+![Homepage](src/random-username-generator-01.png)
+![List of words](src/random-username-generator-02.png)
+![Alert](src/random-username-generator-03.png)
+
 
 ### Design decisions:
 I created the application to help make different random usernames when creating accounts online. I built the randomizer function while traveling and then gave it a basic interface one afternoon. I frequently use this application and found that a button to copy to clipboard would be really useful.
