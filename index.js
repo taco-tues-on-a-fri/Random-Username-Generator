@@ -1,38 +1,60 @@
-const adjectives =  words.adjectives;
-const nouns      =  words.nouns;
 
-const clip = new ClipboardJS('.list-group-item');
-clip.on("success", () => {
-  alert("Copied to clipboard")
-});
-clip.on("error", () => {
-  alert("Something went wrong with clipboard!")
-});
+console.log('verbs:  ',verbs)
+console.log('nouns:  ',nouns)
 
-const random_index = (array) =>  { return Math.floor(Math.random() * array.length) };
+const shuffledAdjectives = shuffleArray(adjectives)
+const shuffledNouns = shuffleArray(nouns)
 
-const create_button_list_item_w_last_pair = () => {
-  const last_pair = document.getElementById("random_name_textarea").innerHTML;
-  const button = document.createElement("BUTTON");
-  button.id = last_pair.replace(" ", "-");
-  const data_target = "#"+button.id;
-  button.setAttribute("value", last_pair);
-  button.setAttribute("data-clipboard-action", "copy");
-  button.setAttribute("data-clipboard-target", data_target);
-  button.className = 'list-group-item list-group-item-action';
-  const text = document.createTextNode(last_pair);
-  button.appendChild(text);
-  document.getElementById("word_list_group").appendChild(button);
-};
+const generateRandomWordPair = () => {
+  const randomPair = []
+  randomPair.push(shuffledAdjectives[randomIndex(shuffledAdjectives)])
+  randomPair.push(shuffledNouns[randomIndex(shuffledNouns)])
+  // return randomPair.join(' ')
+  document.getElementById('randomNameTextArea').innerHTML = randomPair.join(' ')
+}
 
-const random_name_generator = () => {
-  let random_pair = [];
-  random_pair.push(adjectives[random_index(adjectives)]);
-  random_pair.push(nouns[random_index(nouns)]);
-  document.getElementById("random_name_textarea").innerHTML = random_pair.join(" ");
-};
 
-const add_to_list_then_generate_new_pair = () => {
-  create_button_list_item_w_last_pair();
-  random_name_generator();
-};
+
+
+
+
+
+
+const clip = new ClipboardJS('.list-group-item')
+clip.on('success', () => {
+  console.log('Copied to clipboard')
+})
+clip.on('error', () => {
+  alert('Something went wrong with clipboard!')
+})
+
+const randomIndex = array => {
+  return Math.floor(Math.random() * array.length)
+}
+
+
+const createButtonListItemWithLastPair = () => {
+  const lastPair = document.getElementById('randomNameTextArea').innerHTML
+  const button = document.createElement('BUTTON')
+  button.id = lastPair.replace(' ', '-')
+  const data_target = '#' + button.id
+  button.setAttribute('value', lastPair)
+  button.setAttribute('data-clipboard-action', 'copy')
+  button.setAttribute('data-clipboard-target', data_target)
+  button.className = 'list-group-item list-group-item-action'
+  const text = document.createTextNode(lastPair)
+  button.appendChild(text)
+  document.getElementById('wordListGroup').appendChild(button)
+}
+
+const randomNameGenerator = () => {
+  let randomPair = []
+  randomPair.push(adjectives[randomIndex(adjectives)])
+  randomPair.push(nouns[randomIndex(nouns)])
+  document.getElementById('randomNameTextArea').innerHTML = randomPair.join(' ')
+}
+
+const addToListThenGenerateNewPair = () => {
+  createButtonListItemWithLastPair()
+  randomNameGenerator()
+}
