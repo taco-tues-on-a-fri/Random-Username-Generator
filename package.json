@@ -1,0 +1,35 @@
+{
+  "name": "random-username-generator",
+  "version": "1.0.0",
+  "description": "Create random string phrases",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taco-tues-on-a-fri/random-username-generator.git"
+  },
+  "keywords": [
+    "vanilla",
+    "js",
+    "bootstrap",
+    "random",
+    "word",
+    "generator"
+  ],
+  "author": "taco-tues-on-a-fri",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/taco-tues-on-a-fri/random-username-generator/issues"
+  },
+  "homepage": "https://github.com/taco-tues-on-a-fri/random-username-generator#readme"
+}

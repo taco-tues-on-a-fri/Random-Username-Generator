@@ -1,38 +1,74 @@
-const adjectives =  words.adjectives;
-const nouns      =  words.nouns;
+const shuffledAdjectives = shuffleArray(adjectives)
+const shuffledNouns = shuffleArray(nouns)
 
-const clip = new ClipboardJS('.list-group-item');
-clip.on("success", () => {
-  alert("Copied to clipboard")
-});
-clip.on("error", () => {
-  alert("Something went wrong with clipboard!")
-});
+const clip = new ClipboardJS('.text-copy')
+clip.on('success', (event) => {
+  console.info('Copied to clipboard: ', event.text)
+})
 
-const random_index = (array) =>  { return Math.floor(Math.random() * array.length) };
+clip.on('error', (event) => {
+  console.error('Something went wrong with the clipboard!')
+  console.error('Action:', event.action)
+  console.error('Trigger:', event.trigger)
+})
 
-const create_button_list_item_w_last_pair = () => {
-  const last_pair = document.getElementById("random_name_textarea").innerHTML;
-  const button = document.createElement("BUTTON");
-  button.id = last_pair.replace(" ", "-");
-  const data_target = "#"+button.id;
-  button.setAttribute("value", last_pair);
-  button.setAttribute("data-clipboard-action", "copy");
-  button.setAttribute("data-clipboard-target", data_target);
-  button.className = 'list-group-item list-group-item-action';
-  const text = document.createTextNode(last_pair);
-  button.appendChild(text);
-  document.getElementById("word_list_group").appendChild(button);
-};
+const generateRandomPair = () => {
+  const generatedWordPair = []
+  generatedWordPair.push(adjectives[randomIndex(adjectives)])
+  generatedWordPair.push(nouns[randomIndex(nouns)])
+  return generatedWordPair.join(' ')
+}
 
-const random_name_generator = () => {
-  let random_pair = [];
-  random_pair.push(adjectives[random_index(adjectives)]);
-  random_pair.push(nouns[random_index(nouns)]);
-  document.getElementById("random_name_textarea").innerHTML = random_pair.join(" ");
-};
+const clearListItems = () => {
+  const allListItems = document.querySelectorAll('#generatedCardsArea li')
 
-const add_to_list_then_generate_new_pair = () => {
-  create_button_list_item_w_last_pair();
-  random_name_generator();
-};
+  for (const element of allListItems) {
+    element.parentNode.removeChild(element)
+  }
+}
+
+const generatedCardsArea = document.getElementById('generatedCardsArea')
+
+const createListItem = () => {
+  const listItem = document.createElement('li')
+  listItem.className = 'col-span-1 rounded-md h-12 group'
+  listItem.role = 'list'
+
+  const generatedWordPair = generateRandomPair()
+
+  const wordButton = document.createElement('button')
+  wordButton.id = generatedWordPair.replace(' ', '-')
+  const dataTarget = '#' + wordButton.id
+
+  wordButton.className = 'flex h-12 w-full text-copy'
+
+  wordButton.value = generatedWordPair
+  wordButton.setAttribute('data-clipboard-action', 'copy')
+  wordButton.setAttribute('data-clipboard-text', generatedWordPair)
+
+  const colorDiv = document.createElement('div')
+  colorDiv.className = `${getRandomColor()} h-12 w-16 rounded-l-md`
+  wordButton.appendChild(colorDiv)
+
+  const textDiv = document.createElement('div')
+  textDiv.className =
+    'flex-1 flex items-center pl-4 py-2 justify-start text-md truncate bg-white rounded-r-md h-12 w-full'
+  wordButton.appendChild(textDiv)
+
+  const textElement = document.createElement('p')
+  textElement.className = 'text-gray-900 font-medium group-hover:text-indigo-500'
+  const generatedText = document.createTextNode(generatedWordPair)
+  textElement.appendChild(generatedText)
+  textDiv.appendChild(textElement)
+
+  listItem.appendChild(wordButton)
+  
+  generatedCardsArea.insertBefore(listItem, generatedCardsArea.childNodes[0])
+  
+  tippy(dataTarget, {
+    content: 'Copied to clipboard',
+    trigger: 'click',
+    delay: [0],
+    duration: [0, 200],
+  })
+}
