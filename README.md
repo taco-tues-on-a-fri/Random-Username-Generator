@@ -1,14 +1,17 @@
 Random Username Generator
 ========
-Feb 2019
+v.3.0 June 2021
+
+v.2.0 Feb 2019
+
 ------------------
 
-## Version 2.0 of a project which generates a random username using vanilla JavaScript and a bootstrap front-end.
+## Version 3.0 of a project which generates a random username using vanilla JavaScript and tailwind.css .
 
 Link to [live application](https://taco-tues-on-a-fri.github.io/random-username-generator/)
 
 ### Overview:
-Creates random two+ string phrases by pulling from a dataset cleaned words.
+Creates random two/three word phrases from a curated dataset.
 
 
 ### State of project:
@@ -17,13 +20,13 @@ The project is live with a basic interface.
 ### How to use:
 - Navigate to the application by clicking [here](https://taco-tues-on-a-fri.github.io/random-username-generator/).
 - The page will generate and display the first word set.
-- Click on the generated words to get another random set.
-- Clicking on any of the historical words in the list will automatically copy them to the clipboard.
+- Click 'Create Pair' to get another random set.
+- Clicking on any of the word pairs in the list will copy that pair to the clipboard.
 
 
-![Homepage](docs/screenshots/random-username-generator-01.png)
+![Landing Page](docs/screenshots/random-username-generator-01.png)
 ![List of words](docs/screenshots/random-username-generator-02.png)
-![Alert](docs/screenshots/random-username-generator-03.png)
+!['Copied to clipboard' tooltip ](docs/screenshots/random-username-generator-03.png)
 
 
 ### Design decisions:
