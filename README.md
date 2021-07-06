@@ -15,7 +15,7 @@ Creates random two/three word phrases from a curated dataset.
 
 
 ### State of project:
-The project is live with a basic interface.
+The project is live with a basic interface. I eventually want to remake it with React and add additional functionality.
 
 ### How to use:
 - Navigate to the application by clicking [here](https://taco-tues-on-a-fri.github.io/random-username-generator/).
@@ -23,13 +23,8 @@ The project is live with a basic interface.
 - Click 'Create Pair' to get another random set.
 - Clicking on any of the word pairs in the list will copy that pair to the clipboard.
 
-
-![Landing Page](docs/screenshots/random-username-generator-01.png)
-![List of words](docs/screenshots/random-username-generator-02.png)
-!['Copied to clipboard' tooltip ](docs/screenshots/random-username-generator-03.png)
-
-
-### Design decisions:
-I created the application to help make different random usernames when creating accounts online. I frequently use this application and found that a button to copy to clipboard would be really useful.
+<img src="docs/screenshots/random-username-generator-01.png" alt="Landing page" title="Landing page" width="300" />
+<img src="docs/screenshots/random-username-generator-02.png" alt="List of words" title="List of words" width="300" />
+<img src="docs/screenshots/random-username-generator-03.png" alt="'Copied to clipboard' tooltip" title="'Copied to clipboard' tooltip" width="300" />
 
 #### 🌮taco-tues-on-a-fri
