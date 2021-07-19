@@ -13,7 +13,6 @@ Link to [live application](https://taco-tues-on-a-fri.github.io/random-username-
 ### Overview:
 Creates random two/three word phrases from a curated dataset.
 
-
 ### State of project:
 The project is live with a basic interface. I eventually want to remake it with React and add additional functionality.
 
